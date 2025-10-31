@@ -6,7 +6,29 @@
   <title>PivaTelli Interactive • Pilares</title>
 
   <style>
-    :root{
+    :root{/* Otimizações de compatibilidade Mac 2015 */
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pillars-grid,
+.marketplaces-grid,
+.stats-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.pillar-card,
+.marketplace-mini,
+.stat-item {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
       --primary:#B28CBF;
       --bg:#FFF8F3;
       --text:#2B2B2B;
