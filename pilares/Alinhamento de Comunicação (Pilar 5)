@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pilar 5: Alinhamento de Comunicação - PivaTelli 2025">
+    <title>Pilar 5: Alinhamento de Comunicação – PivaTelli 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #B28CBF;
+            --secondary: #7DAF9C;
+            --accent: #C9A76A;
+            --background: #F6F4EF;
+            --text-main: #3E2E28;
+            --text-light: #6B5B52;
+            --border-light: rgba(201, 167, 106, 0.2 );
+            --shadow-light: rgba(178, 140, 191, 0.1);
+            --shadow-medium: rgba(178, 140, 191, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(246, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #E8A87C 0%, rgba(232, 168, 124, 0.3) 100%);
+            border-left: 5px solid #E8A87C;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .pilars-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .pilars-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            border-top: 5px solid #E8A87C;
+        }
+
+        .pilars-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .pilars-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Tone of Voice Section */
+        .tone-section {
+            background: linear-gradient(135deg, rgba(232, 168, 124, 0.1) 0%, rgba(178, 140, 191, 0.1) 100%);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tone-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .tone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tone-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow-light);
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .tone-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .tone-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Copy Generator Section */
+        .generator-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .generator-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .generator-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: var(--text-main);
+            background-color: var(--background);
+            margin-bottom: 20px;
+            min-height: 150px;
+        }
+
+        .generator-form button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background-color: var(--secondary);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .generator-form button:hover {
+            background-color: #6a9b8a;
+        }
+
+        .generated-copy {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px dashed var(--accent);
+            background-color: rgba(201, 167, 106, 0.1);
+            border-radius: 8px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: var(--text-main);
+            white-space: pre-wrap;
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 18px 50px;
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #6a9b8a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(125, 175, 156, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .pilars-section {
+                grid-template-columns: 1fr;
+            }
+
+            .tone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">PivaTelli</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../index.html#pilares">Pilares</a> / <span>Alinhamento de Comunicação</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="subtitle">Pilar 5</div>
+            <h1>Alinhamento de Comunicação</h1>
+            <p>A voz da marca PivaTelli é única. Garanta que todas as descrições, títulos e materiais de marketing estejam alinhados com o nosso Tom de Voz e Pilares de Marca para construir confiança e autoridade.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+
+            <!-- Pilares da Marca -->
+            <div class="pilars-section">
+                <div class="pilars-card">
+                    <h3>Natureza</h3>
+                    <p>A pureza dos ingredientes, a origem e o respeito pelos ciclos naturais. Linguagem que evoca bem-estar, serenidade e autenticidade.</p>
+                </div>
+                <div class="pilars-card">
+                    <h3>Ciência</h3>
+                    <p>A precisão da pesquisa, a eficácia comprovada e a inovação. Linguagem técnica, objetiva e baseada em dados verificáveis.</p>
+                </div>
+                <div class="pilars-card">
+                    <h3>Confiança</h3>
+                    <p>A transparência, a conformidade e a segurança do consumidor. Linguagem que transmite autoridade, credibilidade e cuidado.</p>
+                </div>
+            </div>
+
+            <!-- Tom de Voz -->
+            <div class="tone-section">
+                <h3>🗣️ Tom de Voz Padrão</h3>
+                <div class="tone-grid">
+                    <div class="tone-item"><h4>Elegante</h4><p>Evitar gírias e informalidade excessiva.</p></div>
+                    <div class="tone-item"><h4>Autoritário</h4><p>Baseado em fatos e estudos, não em opiniões.</p></div>
+                    <div class="tone-item"><h4>Acolhedor</h4><p>Focado no benefício e na solução para o cliente.</p></div>
+                    <div class="tone-item"><h4>Claro</h4><p>Mensagens diretas e sem ambiguidades.</p></div>
+                    <div class="tone-item"><h4>Inspirador</h4><p>Conecta o produto ao ciclo de vida e bem-estar.</p></div>
+                    <div class="tone-item"><h4>Técnico</h4><p>Uso correto de termos de saúde e ciência.</p></div>
+                </div>
+            </div>
+
+            <!-- Gerador de Copy -->
+            <div class="generator-section">
+                <h3>✍️ Gerador de Copy (Simulação)</h3>
+                <p>Insira as principais características do seu produto para gerar uma descrição alinhada com o Tom de Voz PivaTelli.</p>
+                <form class="generator-form" id="copyGeneratorForm">
+                    <textarea id="inputFeatures" placeholder="Ex: Óleo de Linhaça, Óleo de Prímula, Óleo de Borragem. Ajuda no equilíbrio hormonal feminino."></textarea>
+                    <button type="submit">Gerar Copy Padrão</button>
+                    <div class="generated-copy" id="generatedCopy"></div>
+                </form>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="../checklist/checklist-completo.html" class="cta-button">Ver Checklist Completo</a>
+                <a href="../index.html#pilares" class="cta-button secondary">Voltar aos Pilares</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">PivaTelli – Naturalmente científica, humanamente pura</p>
+            <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('copyGeneratorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const features = document.getElementById('inputFeatures').value;
+            const generatedCopyDiv = document.getElementById('generatedCopy');
+
+            if (features.trim() === '') {
+                generatedCopyDiv.textContent = 'Por favor, insira as características do produto.';
+                generatedCopyDiv.style.display = 'block';
+                return;
+            }
+
+            // Simulação de geração de copy alinhada com o Tom de Voz
+            const copy = `
+                **Título (Elegante e Autoritário):**
+                NOW Woman: A Ciência Natural para o Equilíbrio Hormonal Feminino.
+
+                **Descrição Curta (Acolhedora e Clara):**
+                Formulado com a pureza do Óleo de Linhaça, Prímula e Borragem, NOW Woman é o suporte que seu corpo precisa para um ciclo de vida mais harmonioso e com vitalidade. Confiança baseada em ingredientes naturais e pesquisa.
+
+                **Chamada (Inspiradora):**
+                Redescubra seu bem-estar. Viva cada fase com a serenidade e a força que a natureza e a ciência PivaTelli oferecem.
+            `;
+
+            generatedCopyDiv.textContent = copy;
+            generatedCopyDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
