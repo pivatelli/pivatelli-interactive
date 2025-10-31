@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pilar 4: Padrão Premium de Imagem - PivaTelli 2025">
+    <title>Pilar 4: Padrão Premium de Imagem – PivaTelli 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #B28CBF;
+            --secondary: #7DAF9C;
+            --accent: #C9A76A;
+            --background: #F6F4EF;
+            --text-main: #3E2E28;
+            --text-light: #6B5B52;
+            --border-light: rgba(201, 167, 106, 0.2 );
+            --shadow-light: rgba(178, 140, 191, 0.1);
+            --shadow-medium: rgba(178, 140, 191, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(246, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, rgba(178, 140, 191, 0.3) 100%);
+            border-left: 5px solid var(--primary);
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .spec-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            border-top: 5px solid var(--primary);
+        }
+
+        .spec-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .spec-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .spec-card li {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .spec-card li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        .spec-card .dimensions {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Validator Section */
+        .validator-section {
+            background: linear-gradient(135deg, rgba(178, 140, 191, 0.1) 0%, rgba(125, 175, 156, 0.1) 100%);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .validator-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .validator-form {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .validator-form .form-group {
+            flex: 1;
+        }
+
+        .validator-form label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .validator-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: var(--text-main);
+            background-color: white;
+        }
+
+        .validator-form button {
+            padding: 12px 25px;
+            border: none;
+            background-color: var(--primary);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .validator-form button:hover {
+            background-color: #9c78a9;
+        }
+
+        .validation-result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: none;
+        }
+
+        .validation-result.success {
+            background-color: rgba(125, 175, 156, 0.3);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+
+        .validation-result.error {
+            background-color: rgba(217, 123, 111, 0.3);
+            color: #D97B6F;
+            border: 1px solid #D97B6F;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 18px 50px;
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #6a9b8a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(125, 175, 156, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .validator-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .validator-form button {
+                margin-top: 10px;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">PivaTelli</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../index.html#pilares">Pilares</a> / <span>Padrão Premium de Imagem</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="subtitle">Pilar 4</div>
+            <h1>Padrão Premium de Imagem</h1>
+            <p>A imagem é a primeira impressão. Este pilar garante que todo o material visual (fotos, vídeos, mockups) esteja em conformidade com os padrões de qualidade da PivaTelli e os requisitos técnicos de cada marketplace.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+
+            <!-- Specs Grid -->
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>Imagem Principal (Mockup)</h3>
+                    <ul>
+                        <li>Fundo branco puro (#FFFFFF) ou transparente.</li>
+                        <li>Produto em destaque, sem textos ou logos de terceiros.</li>
+                        <li>Resolução mínima: 1000px x 1000px.</li>
+                    </ul>
+                    <span class="dimensions">Padrão: 1080px x 1080px (Quadrado)</span>
+                </div>
+                <div class="spec-card">
+                    <h3>Imagens Secundárias</h3>
+                    <ul>
+                        <li>Mínimo de 3 ângulos diferentes.</li>
+                        <li>Imagens de lifestyle ou em uso (contexto).</li>
+                        <li>Zoom em detalhes importantes (selos, ingredientes).</li>
+                    </ul>
+                    <span class="dimensions">Padrão: 1200px x 900px (Paisagem)</span>
+                </div>
+                <div class="spec-card">
+                    <h3>Vídeo Curto</h3>
+                    <ul>
+                        <li>Duração de 10 a 30 segundos.</li>
+                        <li>Formato vertical (TikTok, Instagram Reels).</li>
+                        <li>Qualidade de vídeo mínima: 720p (HD).</li>
+                    </ul>
+                    <span class="dimensions">Padrão: 1080px x 1920px (Vertical)</span>
+                </div>
+                <div class="spec-card">
+                    <h3>Tabela Nutricional / Selos</h3>
+                    <ul>
+                        <li>Imagem legível e em alta resolução.</li>
+                        <li>Selos de certificação devem estar visíveis.</li>
+                        <li>Não deve ser a imagem principal do produto.</li>
+                    </ul>
+                    <span class="dimensions">Padrão: 800px x 1200px (Vertical)</span>
+                </div>
+            </div>
+
+            <!-- Validator Section -->
+            <div class="validator-section">
+                <h3>📐 Validador de Dimensões</h3>
+                <p>Verifique se sua imagem atende aos requisitos de resolução mínima.</p>
+                <form class="validator-form" id="dimensionValidator">
+                    <div class="form-group">
+                        <label for="width">Largura (px)</label>
+                        <input type="number" id="width" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Altura (px)</label>
+                        <input type="number" id="height" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Tipo de Imagem</label>
+                        <select id="type">
+                            <option value="principal">Principal (1000x1000 min)</option>
+                            <option value="secundaria">Secundária (1200x900 min)</option>
+                            <option value="video">Vídeo (720p min)</option>
+                        </select>
+                    </div>
+                    <button type="submit">Validar</button>
+                </form>
+                <div class="validation-result" id="validationResult"></div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="alinhamento-comunicacao.html" class="cta-button">Próximo Pilar: Alinhamento de Comunicação</a>
+                <a href="../checklist/checklist-completo.html" class="cta-button secondary">Ver Checklist Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">PivaTelli – Naturalmente científica, humanamente pura</p>
+            <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('dimensionValidator').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const width = parseInt(document.getElementById('width').value);
+            const height = parseInt(document.getElementById('height').value);
+            const type = document.getElementById('type').value;
+            const resultDiv = document.getElementById('validationResult');
+
+            let minWidth, minHeight, message;
+            let success = true;
+
+            if (type === 'principal') {
+                minWidth = 1000;
+                minHeight = 1000;
+                message = `Requisito Mínimo: ${minWidth}px x ${minHeight}px (Quadrado).`;
+            } else if (type === 'secundaria') {
+                minWidth = 1200;
+                minHeight = 900;
+                message = `Requisito Mínimo: ${minWidth}px x ${minHeight}px (Paisagem).`;
+            } else if (type === 'video') {
+                minWidth = 720;
+                minHeight = 1280; // 720p em formato vertical (9:16)
+                message = `Requisito Mínimo: 720px x 1280px (Vídeo Vertical).`;
+            }
+
+            if (width < minWidth || height < minHeight) {
+                success = false;
+                resultDiv.textContent = `❌ FALHA na Validação. Suas dimensões (${width}px x ${height}px) estão abaixo do mínimo exigido. ${message}`;
+                resultDiv.className = 'validation-result error';
+            } else {
+                resultDiv.textContent = `✅ APROVADO! Suas dimensões (${width}px x ${height}px) atendem ao requisito.`;
+                resultDiv.className = 'validation-result success';
+            }
+
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
