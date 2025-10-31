@@ -20,9 +20,32 @@
             --background: #F6F4EF;
             --text-main: #3E2E28;
             --text-light: #6B5B52;
-            --border-light: rgba(201, 167, 106, 0.2 );
+            --border-light: rgba(201, 167, 106, 0.2);
             --shadow-light: rgba(178, 140, 191, 0.1);
             --shadow-medium: rgba(178, 140, 191, 0.2);
+        }
+
+        /* ⚙️ Otimizações de compatibilidade Mac 2015 */
+        body, html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .pillars-grid,
+        .marketplaces-grid,
+        .stats-grid {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .pillar-card,
+        .marketplace-mini,
+        .stat-item {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
 
         html {
@@ -546,126 +569,4 @@
                     </a>
 
                     <!-- Pilar 2 -->
-                    <a href="pilares/qualidade-seguranca.html" class="pillar-card">
-                        <div class="pillar-number">02</div>
-                        <h3 class="pillar-title">Qualidade e Segurança</h3>
-                        <p class="pillar-description">ANVISA, BPF/GMP, Ficha Técnica e Laudos de Pureza. Certificações que comprovam conformidade regulatória.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
-
-                    <!-- Pilar 3 -->
-                    <a href="pilares/detalhes-produto.html" class="pillar-card">
-                        <div class="pillar-number">03</div>
-                        <h3 class="pillar-title">Detalhes do Produto</h3>
-                        <p class="pillar-description">SKU, EAN, NCM, Dimensões, Peso e Validade. Informações técnicas e logísticas completas para cada produto.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
-
-                    <!-- Pilar 4 -->
-                    <a href="pilares/padroes-imagem.html" class="pillar-card">
-                        <div class="pillar-number">04</div>
-                        <h3 class="pillar-title">Padrão Premium de Imagem</h3>
-                        <p class="pillar-description">Mockup 3D, Imagens Secundárias, Vídeo Curto, Logo e Tabela Nutricional. Especificações visuais rigorosas.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
-
-                    <!-- Pilar 5 -->
-                    <a href="pilares/alinhamento-comunicacao.html" class="pillar-card">
-                        <div class="pillar-number">05</div>
-                        <h3 class="pillar-title">Alinhamento de Comunicação</h3>
-                        <p class="pillar-description">Tom de Voz, Pilares de Marca e Copy Padrão. Comunicação consistente e alinhada com identidade PivaTelli.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Marketplaces Section -->
-            <div id="marketplaces">
-                <div class="section-subtitle">Estratégia Multi-Canal</div>
-                <h2 class="section-title">5 Marketplaces Estratégicos</h2>
-
-                <div class="marketplaces-grid">
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">🎵</div>
-                        <h3 class="marketplace-name">TikTok Shop</h3>
-                        <p class="marketplace-desc">Venda Social em Vídeo Curto</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">📚</div>
-                        <h3 class="marketplace-name">Hotmart</h3>
-                        <p class="marketplace-desc">Educação e Infoprodutos</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">🛒</div>
-                        <h3 class="marketplace-name">Shopee</h3>
-                        <p class="marketplace-desc">Varejo Tradicional</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">🤝</div>
-                        <h3 class="marketplace-name">Eduzz & Bripe</h3>
-                        <p class="marketplace-desc">Afiliação e Produtos Digitais</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">📱</div>
-                        <h3 class="marketplace-name">Instagram & Facebook</h3>
-                        <p class="marketplace-desc">Venda Social Integrada</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Stats Section -->
-            <div class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Pilares Estratégicos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Marketplaces</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Itens de Checklist</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Conformidade</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="cta-section">
-                <h2>Pronto para Começar?</h2>
-                <p>Acesse o checklist completo para acompanhar seu progresso em cada pilar e marketplace. Todos os seus dados são salvos automaticamente.</p>
-                <div class="cta-buttons">
-                    <a href="checklist/checklist-completo.html" class="cta-button">Acessar Checklist Completo</a>
-                    <a href="marketplaces/index.html" class="cta-button secondary">Ver Todos os Marketplaces</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-tagline">PivaTelli</div>
-                <p class="footer-text">Naturalmente científica, humanamente pura</p>
-                <div class="footer-divider"></div>
-                <div class="footer-links">
-                    <a href="#pilares">Pilares</a>
-                    <a href="#marketplaces">Marketplaces</a>
-                    <a href="checklist/checklist-completo.html">Checklist</a>
-                </div>
-                <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                    <a href="pilares/qualidade-segur
