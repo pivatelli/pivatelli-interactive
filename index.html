@@ -1,671 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PivaTelli 2025 - Lançamento Digital Profissional">
-    <title>PivaTelli 2025 – Lançamento Digital Profissional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #B28CBF;
-            --secondary: #7DAF9C;
-            --accent: #C9A76A;
-            --background: #F6F4EF;
-            --text-main: #3E2E28;
-            --text-light: #6B5B52;
-            --border-light: rgba(201, 167, 106, 0.2 );
-            --shadow-light: rgba(178, 140, 191, 0.1);
-            --shadow-medium: rgba(178, 140, 191, 0.2);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Lora', serif;
-            background-color: var(--background);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(246, 244, 239, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 1000;
-            padding: 20px 0;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: var(--text-main);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #E9D4CF 0%, rgba(233, 212, 207, 0.3) 100%);
-            text-align: center;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--text-main);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero .tagline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
-        }
-
-        .cta-primary {
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 18px 50px;
-            background-color: var(--secondary);
-            color: white;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px var(--shadow-light);
-        }
-
-        .cta-primary:hover {
-            background-color: #6a9b8a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px var(--shadow-medium);
-        }
-
-        /* Content Section */
-        .content-section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--text-main);
-            text-align: center;
-            margin-bottom: 60px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: var(--text-light);
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        /* Pillar Cards */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .pillar-card {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            border-left: 5px solid var(--secondary);
-            box-shadow: 0 4px 15px var(--shadow-light);
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.6s ease-out forwards;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pillar-card:nth-child(1) { animation-delay: 0.1s; border-left-color: #D97B6F; }
-        .pillar-card:nth-child(2) { animation-delay: 0.2s; border-left-color: #7DAF9C; }
-        .pillar-card:nth-child(3) { animation-delay: 0.3s; border-left-color: #C9A76A; }
-        .pillar-card:nth-child(4) { animation-delay: 0.4s; border-left-color: #B28CBF; }
-        .pillar-card:nth-child(5) { animation-delay: 0.5s; border-left-color: #E8A87C; }
-
-        .pillar-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px var(--shadow-medium);
-        }
-
-        .pillar-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-
-        .pillar-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .pillar-description {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 25px;
-            flex-grow: 1;
-            line-height: 1.8;
-        }
-
-        .pillar-link {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 12px 25px;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .pillar-link:hover {
-            background-color: #6a9b8a;
-            transform: translateX(5px);
-        }
-
-        /* Marketplaces Section */
-        .marketplaces-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 80px;
-        }
-
-        .marketplace-mini {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            border-left: 4px solid var(--secondary);
-            box-shadow: 0 2px 10px var(--shadow-light);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            text-align: center;
-        }
-
-        .marketplace-mini:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--shadow-medium);
-        }
-
-        .marketplace-icon {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-
-        .marketplace-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--text-main);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .marketplace-desc {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, rgba(178, 140, 191, 0.1) 0%, rgba(125, 175, 156, 0.1) 100%);
-            border-radius: 12px;
-            padding: 60px 40px;
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-        }
-
-        .stat-item {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .stat-item:nth-child(1) { animation-delay: 0.1s; }
-        .stat-item:nth-child(2) { animation-delay: 0.2s; }
-        .stat-item:nth-child(3) { animation-delay: 0.3s; }
-        .stat-item:nth-child(4) { animation-delay: 0.4s; }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: white;
-            border-radius: 12px;
-            padding: 60px 40px;
-            text-align: center;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 15px var(--shadow-light);
-            margin-bottom: 80px;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--text-main);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .cta-section p {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 16px 40px;
-            background-color: var(--secondary);
-            color: white;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px var(--shadow-light);
-        }
-
-        .cta-button:hover {
-            background-color: #6a9b8a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px var(--shadow-medium);
-        }
-
-        .cta-button.secondary {
-            background-color: transparent;
-            color: var(--secondary);
-            border-color: var(--secondary);
-        }
-
-        .cta-button.secondary:hover {
-            background-color: rgba(125, 175, 156, 0.1);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-main);
-            color: white;
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 30px;
-        }
-
-        .footer-tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .footer-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .footer-divider {
-            width: 80px;
-            height: 2px;
-            background-color: var(--accent);
-            margin: 30px auto;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .pillars-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .marketplaces-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .cta-button {
-                width: 100%;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PivaTelli Interactive • Pilares</title>
+
+  <style>
+    :root{
+      --primary:#B28CBF;
+      --bg:#FFF8F3;
+      --text:#2B2B2B;
+      --card-bg:#ffffff;
+      --shadow:rgba(0,0,0,0.08);
+    }
+
+    /* Reset simples */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    html,body{height:100%}
+    body{
+      min-height:100vh;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header{
+      width:100%;
+      background:#fff;
+      padding:1.5rem 1rem;
+      box-shadow:0 2px 8px var(--shadow);
+      position:sticky;top:0;z-index:10;
+      text-align:center;
+    }
+    header h1{
+      font-size:1.4rem;
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:.6px;
+    }
+    header p{font-size:.88rem;color:#666;margin-top:.25rem}
+
+    main{
+      width:min(1200px,92%);
+      display:grid;
+      gap:1rem;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      margin:2.25rem auto;
+    }
+
+    .card{
+      background:var(--card-bg);
+      border-radius:14px;
+      padding:1.6rem;
+      text-align:center;
+      box-shadow:0 6px 18px var(--shadow);
+      cursor:pointer;
+      transition:transform .22s ease,box-shadow .22s ease;
+      opacity:0;
+      transform:translateY(12px);
+      animation:enter .55s ease forwards;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+    .card h2{color:var(--primary);font-size:1.05rem;margin-bottom:.35rem;font-weight:600}
+    .card p{font-size:.88rem;color:#444;line-height:1.25}
+
+    footer{
+      width:100%;
+      padding:1.5rem;
+      text-align:center;
+      color:#666;
+      font-size:.85rem;
+      margin-top:auto;
+    }
+
+    @keyframes enter{
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* delays para um pequeno stagger */
+    .card:nth-child(1){animation-delay:.06s}
+    .card:nth-child(2){animation-delay:.12s}
+    .card:nth-child(3){animation-delay:.18s}
+    .card:nth-child(4){animation-delay:.24s}
+    .card:nth-child(5){animation-delay:.30s}
+    .card:nth-child(6){animation-delay:.36s}
+    .card:nth-child(7){animation-delay:.42s}
+
+    /* responsivo */
+    @media (max-width:420px){
+      header{padding:1rem}
+      .card{padding:1.1rem;border-radius:12px}
+      header h1{font-size:1.15rem}
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">PivaTelli</a>
-            <div class="nav-links">
-                <a href="#pilares">Pilares</a>
-                <a href="#marketplaces">Marketplaces</a>
-                <a href="checklist/checklist-completo.html">Checklist</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>PivaTelli 2025</h1>
-            <div class="tagline">Lançamento Digital Profissional</div>
-            <p>Estratégia completa de cadastro em 5 marketplaces com 5 pilares estratégicos. Documentação técnica, conformidade regulatória e posicionamento premium.</p>
-            <a href="checklist/checklist-completo.html" class="cta-primary">Começar Checklist</a>
-        </div>
-    </section>
+  <header>
+    <h1>PivaTelli Interactive</h1>
+    <p>Portal dos pilares — clique para navegar</p>
+  </header>
 
-    <!-- Content Section -->
-    <section class="content-section">
-        <div class="container">
-            <!-- Pilares Section -->
-            <div id="pilares">
-                <div class="section-subtitle">Fundação Estratégica</div>
-                <h2 class="section-title">5 Pilares Estratégicos</h2>
+  <main aria-label="Pilares e recursos">
+    <div class="card" role="link" tabindex="0"
+         onclick="go('pilares/conformidade-legal.html')"
+         onkeydown="if(event.key==='Enter') go('pilares/conformidade-legal.html')">
+      <h2>Conformidade Legal</h2>
+      <p>Normas, transparência e responsabilidade corporativa.</p>
+    </div>
 
-                <div class="pillars-grid">
-                    <!-- Pilar 1 -->
-                    <a href="pilares/conformidade-legal.html" class="pillar-card">
-                        <div class="pillar-number">01</div>
-                        <h3 class="pillar-title">Conformidade Legal e Fiscal</h3>
-                        <p class="pillar-description">CNPJ, Contrato Social, Endereço, Conta Bancária e documentação fiscal completa para credenciamento profissional.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
+    <div class="card" role="link" tabindex="0"
+         onclick="go('pilares/qualidade-seguranca.html')"
+         onkeydown="if(event.key==='Enter') go('pilares/qualidade-seguranca.html')">
+      <h2>Qualidade & Segurança</h2>
+      <p>Controle de pureza, certificações e segurança dos produtos.</p>
+    </div>
 
-                    <!-- Pilar 2 -->
-                    <a href="pilares/qualidade-seguranca.html" class="pillar-card">
-                        <div class="pillar-number">02</div>
-                        <h3 class="pillar-title">Qualidade e Segurança</h3>
-                        <p class="pillar-description">ANVISA, BPF/GMP, Ficha Técnica e Laudos de Pureza. Certificações que comprovam conformidade regulatória.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
+    <div class="card" role="link" tabindex="0"
+         onclick="go('pilares/detalhes-produto.html')"
+         onkeydown="if(event.key==='Enter') go('pilares/detalhes-produto.html')">
+      <h2>Detalhes do Produto</h2>
+      <p>Ingredientes, diferenciais técnicos e processo produtivo.</p>
+    </div>
 
-                    <!-- Pilar 3 -->
-                    <a href="pilares/detalhes-produto.html" class="pillar-card">
-                        <div class="pillar-number">03</div>
-                        <h3 class="pillar-title">Detalhes do Produto</h3>
-                        <p class="pillar-description">SKU, EAN, NCM, Dimensões, Peso e Validade. Informações técnicas e logísticas completas para cada produto.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
+    <div class="card" role="link" tabindex="0"
+         onclick="go('pilares/padroes-imagem.html')"
+         onkeydown="if(event.key==='Enter') go('pilares/padroes-imagem.html')">
+      <h2>Padrões de Imagem</h2>
+      <p>Identidade visual e consistência em comunicação.</p>
+    </div>
 
-                    <!-- Pilar 4 -->
-                    <a href="pilares/padroes-imagem.html" class="pillar-card">
-                        <div class="pillar-number">04</div>
-                        <h3 class="pillar-title">Padrão Premium de Imagem</h3>
-                        <p class="pillar-description">Mockup 3D, Imagens Secundárias, Vídeo Curto, Logo e Tabela Nutricional. Especificações visuais rigorosas.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
+    <div class="card" role="link" tabindex="0"
+         onclick="go('pilares/alinhamento-comunicacao.html')"
+         onkeydown="if(event.key==='Enter') go('pilares/alinhamento-comunicacao.html')">
+      <h2>Alinhamento de Comunicação</h2>
+      <p>Tom de voz, narrativa e presença nas mídias.</p>
+    </div>
 
-                    <!-- Pilar 5 -->
-                    <a href="pilares/alinhamento-comunicacao.html" class="pillar-card">
-                        <div class="pillar-number">05</div>
-                        <h3 class="pillar-title">Alinhamento de Comunicação</h3>
-                        <p class="pillar-description">Tom de Voz, Pilares de Marca e Copy Padrão. Comunicação consistente e alinhada com identidade PivaTelli.</p>
-                        <span class="pillar-link">Explorar Pilar</span>
-                    </a>
-                </div>
-            </div>
+    <div class="card" role="link" tabindex="0"
+         onclick="go('checklist/checklist-completo.html')"
+         onkeydown="if(event.key==='Enter') go('checklist/checklist-completo.html')">
+      <h2>Checklist</h2>
+      <p>Validação completa dos padrões PivaTelli Interactive.</p>
+    </div>
 
-            <!-- Marketplaces Section -->
-            <div id="marketplaces">
-                <div class="section-subtitle">Estratégia Multi-Canal</div>
-                <h2 class="section-title">5 Marketplaces Estratégicos</h2>
+    <div class="card" role="link" tabindex="0"
+         onclick="go('marketplaces/index.html')"
+         onkeydown="if(event.key==='Enter') go('marketplaces/index.html')">
+      <h2>Marketplaces</h2>
+      <p>Integrações e diretrizes de presença digital.</p>
+    </div>
+  </main>
 
-                <div class="marketplaces-grid">
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">🎵</div>
-                        <h3 class="marketplace-name">TikTok Shop</h3>
-                        <p class="marketplace-desc">Venda Social em Vídeo Curto</p>
-                    </a>
+  <footer>
+    © 2025 PivaTelli Interactive — todos os direitos reservados.
+  </footer>
 
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">📚</div>
-                        <h3 class="marketplace-name">Hotmart</h3>
-                        <p class="marketplace-desc">Educação e Infoprodutos</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">🛒</div>
-                        <h3 class="marketplace-name">Shopee</h3>
-                        <p class="marketplace-desc">Varejo Tradicional</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">🤝</div>
-                        <h3 class="marketplace-name">Eduzz & Bripe</h3>
-                        <p class="marketplace-desc">Afiliação e Produtos Digitais</p>
-                    </a>
-
-                    <a href="marketplaces/index.html" class="marketplace-mini">
-                        <div class="marketplace-icon">📱</div>
-                        <h3 class="marketplace-name">Instagram & Facebook</h3>
-                        <p class="marketplace-desc">Venda Social Integrada</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Stats Section -->
-            <div class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Pilares Estratégicos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Marketplaces</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Itens de Checklist</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Conformidade</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="cta-section">
-                <h2>Pronto para Começar?</h2>
-                <p>Acesse o checklist completo para acompanhar seu progresso em cada pilar e marketplace. Todos os seus dados são salvos automaticamente.</p>
-                <div class="cta-buttons">
-                    <a href="checklist/checklist-completo.html" class="cta-button">Acessar Checklist Completo</a>
-                    <a href="marketplaces/index.html" class="cta-button secondary">Ver Todos os Marketplaces</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-tagline">PivaTelli</div>
-                <p class="footer-text">Naturalmente científica, humanamente pura</p>
-                <div class="footer-divider"></div>
-                <div class="footer-links">
-                    <a href="#pilares">Pilares</a>
-                    <a href="#marketplaces">Marketplaces</a>
-                    <a href="checklist/checklist-completo.html">Checklist</a>
-                </div>
-                <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
-            </div>
-        </div>
-    </footer>
+  <script>
+    // função mínima e segura para navegação local
+    function go(path){
+      // proteção básica: só navegar se for uma string e não conter espaços estranhos
+      if(typeof path !== 'string') return;
+      // evita navegação para outros sites por acidente
+      if(path.startsWith('http') || path.includes('//')) {
+        // para segurança, permitir apenas caminhos relativos
+        console.warn('Caminho não permitido:', path);
+        return;
+      }
+      window.location.href = path;
+    }
+  </script>
 </body>
 </html>
