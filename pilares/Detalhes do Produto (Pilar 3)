@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pilar 3: Detalhes do Produto - PivaTelli 2025">
+    <title>Pilar 3: Detalhes do Produto – PivaTelli 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #B28CBF;
+            --secondary: #7DAF9C;
+            --accent: #C9A76A;
+            --background: #F6F4EF;
+            --text-main: #3E2E28;
+            --text-light: #6B5B52;
+            --border-light: rgba(201, 167, 106, 0.2 );
+            --shadow-light: rgba(178, 140, 191, 0.1);
+            --shadow-medium: rgba(178, 140, 191, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(246, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--accent) 0%, rgba(201, 167, 106, 0.3) 100%);
+            border-left: 5px solid var(--accent);
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .form-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: var(--text-main);
+            background-color: var(--background);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(125, 175, 156, 0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-save, .btn-reset {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-save {
+            background-color: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(125, 175, 156, 0.3);
+        }
+
+        .btn-save:hover {
+            background-color: #6a9b8a;
+            transform: translateY(-2px);
+        }
+
+        .btn-reset {
+            background-color: var(--background);
+            color: var(--text-main);
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-reset:hover {
+            background-color: #e0dcd4;
+        }
+
+        /* Reference Table */
+        .reference-section {
+            margin-top: 60px;
+        }
+
+        .reference-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .reference-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .reference-table th, .reference-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .reference-table th {
+            background-color: var(--primary);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .reference-table td {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .reference-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 18px 50px;
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #6a9b8a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(125, 175, 156, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                justify-content: center;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">PivaTelli</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../index.html#pilares">Pilares</a> / <span>Detalhes do Produto</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="subtitle">Pilar 3</div>
+            <h1>Detalhes do Produto</h1>
+            <p>O cadastro correto e detalhado do produto é crucial para a logística e para a otimização de busca (SEO) nos marketplaces. Garanta que todas as informações técnicas e logísticas estejam preenchidas com precisão.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+
+            <!-- Cadastro Form -->
+            <div class="form-section">
+                <h3>📝 Formulário de Cadastro de SKU</h3>
+                <form id="productForm">
+                    <!-- Seção de Identificação -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="sku">SKU Interno Único</label>
+                            <input type="text" id="sku" name="sku" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ean">Código de Barras (EAN/GTIN)</label>
+                            <input type="text" id="ean" name="ean" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ncm">NCM (Nomenclatura Fiscal)</label>
+                            <input type="text" id="ncm" name="ncm" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Título do Produto (Padrão)</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                    </div>
+
+                    <!-- Seção de Especificações -->
+                    <div class="form-grid" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="quantity">Quantidade por Embalagem</label>
+                            <input type="number" id="quantity" name="quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Peso Líquido (g)</label>
+                            <input type="number" id="weight" name="weight" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dimensions">Dimensões (AxLxP em cm)</label>
+                            <input type="text" id="dimensions" name="dimensions" placeholder="Ex: 15x8x8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="validity">Data de Validade (Mês/Ano)</label>
+                            <input type="text" id="validity" name="validity" placeholder="Ex: 12/2026" required>
+                        </div>
+                    </div>
+
+                    <!-- Seção de Descrição -->
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="description">Descrição Curta (Máx. 200 caracteres)</label>
+                        <textarea id="description" name="description" rows="3" maxlength="200"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-reset">Limpar</button>
+                        <button type="submit" class="btn-save">Salvar e Validar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Reference Table -->
+            <div class="reference-section">
+                <h3>📋 Referência Técnica</h3>
+                <table class="reference-table">
+                    <thead>
+                        <tr>
+                            <th>Campo</th>
+                            <th>Descrição</th>
+                            <th>Importância</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SKU</td>
+                            <td>Código de controle interno do estoque. Deve ser único e padronizado.</td>
+                            <td>Logística e Controle</td>
+                        </tr>
+                        <tr>
+                            <td>EAN/GTIN</td>
+                            <td>Código de barras global. Essencial para marketplaces de varejo (Shopee, TikTok).</td>
+                            <td>Comercial e Legal</td>
+                        </tr>
+                        <tr>
+                            <td>NCM</td>
+                            <td>Nomenclatura Comum do Mercosul. Usado para classificação fiscal e emissão de NF.</td>
+                            <td>Fiscal</td>
+                        </tr>
+                        <tr>
+                            <td>Dimensões/Peso</td>
+                            <td>Usado para cálculo de frete e cubagem. Erros causam custos adicionais.</td>
+                            <td>Logística e Custo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="padroes-imagem.html" class="cta-button">Próximo Pilar: Padrão Premium de Imagem</a>
+                <a href="../checklist/checklist-completo.html" class="cta-button secondary">Ver Checklist Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">PivaTelli – Naturalmente científica, humanamente pura</p>
+            <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('productForm');
+        const storageKey = 'productFormPillar3';
+
+        // Load data from localStorage
+        function loadData() {
+            const savedData = localStorage.getItem(storageKey);
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                for (const key in data) {
+                    const input = document.getElementById(key);
+                    if (input) {
+                        input.value = data[key];
+                    }
+                }
+            }
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            const data = {};
+            new FormData(form).forEach((value, key) => {
+                data[key] = value;
+            });
+            localStorage.setItem(storageKey, JSON.stringify(data));
+        }
+
+        // Event listeners for saving
+        form.addEventListener('input', saveData);
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveData();
+            alert('Dados salvos e validados com sucesso! (Simulação)');
+        });
+
+        // Event listener for reset
+        document.querySelector('.btn-reset').addEventListener('click', () => {
+            if (confirm('Tem certeza que deseja limpar todos os campos?')) {
+                form.reset();
+                localStorage.removeItem(storageKey);
+            }
+        });
+
+        // Initial load
+        loadData();
+    </script>
+</body>
+</html>
