@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pilar 1: Conformidade Legal e Fiscal - PivaTelli 2025">
+    <title>Pilar 1: Conformidade Legal e Fiscal – PivaTelli 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #B28CBF;
+            --secondary: #7DAF9C;
+            --accent: #C9A76A;
+            --background: #F6F4EF;
+            --text-main: #3E2E28;
+            --text-light: #6B5B52;
+            --border-light: rgba(201, 167, 106, 0.2 );
+            --shadow-light: rgba(178, 140, 191, 0.1);
+            --shadow-medium: rgba(178, 140, 191, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(246, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #D97B6F 0%, rgba(217, 123, 111, 0.3) 100%);
+            border-left: 5px solid #D97B6F;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .checklist-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 4px solid #D97B6F;
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .checklist-container h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .checklist-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            cursor: pointer;
+            accent-color: #D97B6F;
+            margin-top: 2px;
+        }
+
+        .checklist-content {
+            flex: 1;
+        }
+
+        .checklist-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .checklist-description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .checklist-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background-color: rgba(217, 123, 111, 0.2);
+            color: #D97B6F;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Progress Bar */
+        .progress-overview {
+            background: linear-gradient(135deg, rgba(217, 123, 111, 0.1) 0%, rgba(125, 175, 156, 0.1) 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .progress-overview h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .progress-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .progress-percentage {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background-color: rgba(62, 46, 40, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary) 0%, #D97B6F 100%);
+            border-radius: 6px;
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 18px 50px;
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #6a9b8a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(125, 175, 156, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">PivaTelli</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../index.html#pilares">Pilares</a> / <span>Conformidade Legal</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="subtitle">Pilar 1</div>
+            <h1>Conformidade Legal e Fiscal</h1>
+            <p>A base de qualquer operação profissional. Garanta que todos os seus documentos e registros fiscais estejam em perfeita conformidade para evitar bloqueios e multas.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Progress Overview -->
+            <div class="progress-overview">
+                <h3>📊 Progresso do Pilar</h3>
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <span class="progress-name">Conclusão dos Requisitos</span>
+                        <span class="progress-percentage" id="pillarProgress">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="pillarProgressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checklist Items -->
+            <div class="checklist-container">
+                <h3>✅ Checklist de Documentação</h3>
+                <div id="checklistItems">
+                    <!-- Items will be rendered here -->
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="../checklist/checklist-completo.html" class="cta-button">Ver Checklist Completo</a>
+                <a href="../index.html#pilares" class="cta-button secondary">Voltar aos Pilares</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">PivaTelli – Naturalmente científica, humanamente pura</p>
+            <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
+        </div>
+    </footer>
+
+    <script>
+        const checklistData = [
+            { id: 1, title: 'CNPJ Ativo e Regularizado', description: 'Verificar atividade junto à Receita Federal. O CNPJ deve estar ativo e apto a emitir notas fiscais.', tags: ['Legal', 'Fiscal', 'Obrigatório'] },
+            { id: 2, title: 'Contrato Social com CNAE Compatível', description: 'O Código Nacional de Atividade Econômica (CNAE) deve incluir a atividade de comercialização de suplementos ou infoprodutos, conforme o caso.', tags: ['Legal', 'Fiscal', 'Crítico'] },
+            { id: 3, title: 'Razão Social e Nome Fantasia', description: 'Os dados jurídicos oficiais devem estar atualizados e em conformidade com o cadastro nos marketplaces.', tags: ['Legal', 'Cadastro', 'Essencial'] },
+            { id: 4, title: 'Endereço Comercial Completo', description: 'Sede fiscal e operacional. O endereço deve ser válido e verificável.', tags: ['Legal', 'Cadastro'] },
+            { id: 5, title: 'Conta Bancária PJ Vinculada', description: 'Para recebimento de vendas. A conta deve estar no mesmo nome da Razão Social (Pessoa Jurídica).', tags: ['Fiscal', 'Financeiro', 'Crítico'] },
+            { id: 6, title: 'Inscrição Estadual e Municipal', description: 'Se aplicável ao regime tributário da empresa (Simples Nacional, Lucro Presumido, etc.).', tags: ['Fiscal', 'Obrigatório'] },
+        ];
+
+        const checklistItemsContainer = document.getElementById('checklistItems');
+        const pillarProgress = document.getElementById('pillarProgress');
+        const pillarProgressBar = document.getElementById('pillarProgressBar');
+
+        function loadCheckedItems() {
+            const saved = localStorage.getItem('pillar1Checked');
+            return saved ? JSON.parse(saved) : {};
+        }
+
+        function saveCheckedItems(checked) {
+            localStorage.setItem('pillar1Checked', JSON.stringify(checked));
+        }
+
+        let checkedItems = loadCheckedItems();
+
+        function renderChecklist() {
+            checklistItemsContainer.innerHTML = checklistData.map(item => `
+                <div class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox" data-id="${item.id}" ${checkedItems[item.id] ? 'checked' : ''}>
+                    <div class="checklist-content">
+                        <div class="checklist-title">${item.title}</div>
+                        <div class="checklist-description">${item.description}</div>
+                        <div class="checklist-meta">
+                            ${item.tags.map(tag => `<span class="meta-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add event listeners
+            document.querySelectorAll('.checklist-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    if (e.target.checked) {
+                        checkedItems[id] = true;
+                    } else {
+                        delete checkedItems[id];
+                    }
+                    saveCheckedItems(checkedItems);
+                    updateProgress();
+                });
+            });
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = checklistData.length;
+            const completed = Object.keys(checkedItems).length;
+            const percentage = Math.round((completed / total) * 100);
+
+            pillarProgress.textContent = percentage + '%';
+            pillarProgressBar.style.width = percentage + '%';
+        }
+
+        renderChecklist();
+    </script>
+</body>
+</html>
