@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checklist Completo de Lançamento - PivaTelli 2025">
+    <title>Checklist Completo – PivaTelli 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #B28CBF;
+            --secondary: #7DAF9C;
+            --accent: #C9A76A;
+            --background: #F6F4EF;
+            --text-main: #3E2E28;
+            --text-light: #6B5B52;
+            --border-light: rgba(201, 167, 106, 0.2 );
+            --shadow-light: rgba(178, 140, 191, 0.1);
+            --shadow-medium: rgba(178, 140, 191, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(246, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, rgba(125, 175, 156, 0.3) 100%);
+            border-left: 5px solid var(--secondary);
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        /* Progress Bar */
+        .progress-overview {
+            background: linear-gradient(135deg, rgba(178, 140, 191, 0.1) 0%, rgba(125, 175, 156, 0.1) 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .progress-overview h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .progress-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .progress-percentage {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background-color: rgba(62, 46, 40, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 6px;
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Filters */
+        .filters-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filters-container label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .filters-container select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            background-color: var(--background);
+            min-width: 150px;
+        }
+
+        /* Checklist */
+        .checklist-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .checklist-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            cursor: pointer;
+            accent-color: var(--secondary);
+            margin-top: 2px;
+        }
+
+        .checklist-content {
+            flex: 1;
+        }
+
+        .checklist-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .checklist-description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .checklist-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .tag-pilar1 { background-color: rgba(217, 123, 111, 0.2); color: #D97B6F; }
+        .tag-pilar2 { background-color: rgba(125, 175, 156, 0.2); color: var(--secondary); }
+        .tag-pilar3 { background-color: rgba(201, 167, 106, 0.2); color: var(--accent); }
+        .tag-pilar4 { background-color: rgba(178, 140, 191, 0.2); color: var(--primary); }
+        .tag-pilar5 { background-color: rgba(232, 168, 124, 0.2); color: #E8A87C; }
+        .tag-marketplace { background-color: rgba(62, 46, 40, 0.1); color: var(--text-main); }
+
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">PivaTelli</a>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <span>Checklist Completo</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="subtitle">Acompanhamento Total</div>
+            <h1>Checklist Completo</h1>
+            <p>Consolidação de todos os requisitos de conformidade, produto, imagem e comunicação, filtráveis por Pilar e Marketplace. Seu progresso é salvo automaticamente.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Progress Overview -->
+            <div class="progress-overview">
+                <h3>📈 Progresso Geral do Lançamento</h3>
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <span class="progress-name">Conclusão Total</span>
+                        <span class="progress-percentage" id="globalProgress">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="globalProgressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <label for="pilarFilter">Filtrar por Pilar:</label>
+                <select id="pilarFilter">
+                    <option value="all">Todos os Pilares</option>
+                    <option value="pilar1">Pilar 1: Conformidade Legal</option>
+                    <option value="pilar2">Pilar 2: Qualidade e Segurança</option>
+                    <option value="pilar3">Pilar 3: Detalhes do Produto</option>
+                    <option value="pilar4">Pilar 4: Padrão de Imagem</option>
+                    <option value="pilar5">Pilar 5: Alinhamento Comunicação</option>
+                </select>
+
+                <label for="marketplaceFilter">Filtrar por Marketplace:</label>
+                <select id="marketplaceFilter">
+                    <option value="all">Todos os Marketplaces</option>
+                    <option value="tiktok">TikTok Shop</option>
+                    <option value="hotmart">Hotmart</option>
+                    <option value="shopee">Shopee</option>
+                    <option value="eduzz">Eduzz & Bripe</option>
+                    <option value="insta">Instagram & Facebook</option>
+                </select>
+            </div>
+
+            <!-- Checklist Items -->
+            <div class="checklist-container">
+                <div id="checklistItems">
+                    <!-- Items will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">PivaTelli – Naturalmente científica, humanamente pura</p>
+            <p class="footer-text">&copy; 2025 Lançamento Digital Profissional</p>
+        </div>
+    </footer>
+
+    <script>
+        const ALL_CHECKLIST_DATA = [
+            // Pilar 1: Conformidade Legal e Fiscal
+            { id: 1, title: 'CNPJ Ativo e Regularizado', pilar: 'pilar1', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz', 'insta'] },
+            { id: 2, title: 'Contrato Social com CNAE Compatível', pilar: 'pilar1', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz'] },
+            { id: 3, title: 'Conta Bancária PJ Vinculada', pilar: 'pilar1', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz'] },
+            { id: 4, title: 'Inscrição Estadual e Municipal (se aplicável)', pilar: 'pilar1', marketplaces: ['tiktok', 'shopee'] },
+            { id: 5, title: 'Certidão Negativa de Débitos (CND)', pilar: 'pilar1', marketplaces: ['tiktok', 'shopee'] },
+
+            // Pilar 2: Qualidade e Segurança
+            { id: 6, title: 'Registro ou Notificação ANVISA', pilar: 'pilar2', marketplaces: ['tiktok', 'shopee'] },
+            { id: 7, title: 'Certificado BPF/GMP', pilar: 'pilar2', marketplaces: ['tiktok', 'shopee'] },
+            { id: 8, title: 'Ficha Técnica Completa do Produto', pilar: 'pilar2', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz'] },
+            { id: 9, title: 'Laudos de Pureza e Concentração', pilar: 'pilar2', marketplaces: ['tiktok', 'shopee'] },
+            { id: 10, title: 'Comprovante de Responsável Técnico', pilar: 'pilar2', marketplaces: ['tiktok', 'shopee'] },
+
+            // Pilar 3: Detalhes do Produto
+            { id: 11, title: 'SKU Interno Único Cadastrado', pilar: 'pilar3', marketplaces: ['tiktok', 'shopee'] },
+            { id: 12, title: 'Código de Barras (EAN/GTIN) Válido', pilar: 'pilar3', marketplaces: ['tiktok', 'shopee'] },
+            { id: 13, title: 'NCM (Nomenclatura Fiscal) Informado', pilar: 'pilar3', marketplaces: ['tiktok', 'shopee'] },
+            { id: 14, title: 'Dimensões e Peso Logístico Corretos', pilar: 'pilar3', marketplaces: ['tiktok', 'shopee'] },
+            { id: 15, title: 'Data de Validade Mínima (6 meses) Garantida', pilar: 'pilar3', marketplaces: ['tiktok', 'shopee'] },
+
+            // Pilar 4: Padrão Premium de Imagem
+            { id: 16, title: 'Imagem Principal (Mockup) 1000x1000px', pilar: 'pilar4', marketplaces: ['tiktok', 'shopee', 'insta'] },
+            { id: 17, title: 'Mínimo de 3 Imagens Secundárias', pilar: 'pilar4', marketplaces: ['tiktok', 'shopee', 'insta'] },
+            { id: 18, title: 'Vídeo Curto (10-30s) em Formato Vertical', pilar: 'pilar4', marketplaces: ['tiktok', 'insta'] },
+            { id: 19, title: 'Tabela Nutricional/Selos em Imagem Legível', pilar: 'pilar4', marketplaces: ['tiktok', 'shopee'] },
+            { id: 20, title: 'Imagens de Lifestyle/Uso em Contexto', pilar: 'pilar4', marketplaces: ['tiktok', 'insta'] },
+
+            // Pilar 5: Alinhamento de Comunicação
+            { id: 21, title: 'Título do Produto Otimizado (SEO)', pilar: 'pilar5', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz'] },
+            { id: 22, title: 'Descrição Longa com Tom de Voz Padrão', pilar: 'pilar5', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz'] },
+            { id: 23, title: 'Descrição Curta (para anúncios)', pilar: 'pilar5', marketplaces: ['tiktok', 'insta'] },
+            { id: 24, title: 'Definição de Palavras-Chave (Keywords)', pilar: 'pilar5', marketplaces: ['tiktok', 'hotmart', 'shopee', 'eduzz'] },
+            { id: 25, title: 'FAQ e Dúvidas Frequentes Elaboradas', pilar: 'pilar5', marketplaces: ['hotmart', 'eduzz'] },
+        ];
+
+        const checklistItemsContainer = document.getElementById('checklistItems');
+        const pilarFilter = document.getElementById('pilarFilter');
+        const marketplaceFilter = document.getElementById('marketplaceFilter');
+        const globalProgress = document.getElementById('globalProgress');
+        const globalProgressBar = document.getElementById('globalProgressBar');
+        const storageKey = 'globalChecklistState';
+
+        function loadCheckedItems() {
+            const saved = localStorage.getItem(storageKey);
+            return saved ? JSON.parse(saved) : {};
+        }
+
+        function saveCheckedItems(checked) {
+            localStorage.setItem(storageKey, JSON.stringify(checked));
+        }
+
+        let checkedItems = loadCheckedItems();
+
+        const pilarMap = {
+            'pilar1': { name: 'Pilar 1: Legal', class: 'tag-pilar1' },
+            'pilar2': { name: 'Pilar 2: Qualidade', class: 'tag-pilar2' },
+            'pilar3': { name: 'Pilar 3: Detalhes', class: 'tag-pilar3' },
+            'pilar4': { name: 'Pilar 4: Imagem', class: 'tag-pilar4' },
+            'pilar5': { name: 'Pilar 5: Comunicação', class: 'tag-pilar5' },
+        };
+
+        const marketplaceMap = {
+            'tiktok': 'TikTok Shop',
+            'hotmart': 'Hotmart',
+            'shopee': 'Shopee',
+            'eduzz': 'Eduzz & Bripe',
+            'insta': 'Insta & Face',
+        };
+
+        function renderChecklist() {
+            const selectedPilar = pilarFilter.value;
+            const selectedMarketplace = marketplaceFilter.value;
+
+            const filteredData = ALL_CHECKLIST_DATA.filter(item => {
+                const pilarMatch = selectedPilar === 'all' || item.pilar === selectedPilar;
+                const marketplaceMatch = selectedMarketplace === 'all' || item.marketplaces.includes(selectedMarketplace);
+                return pilarMatch && marketplaceMatch;
+            });
+
+            if (filteredData.length === 0) {
+                checklistItemsContainer.innerHTML = '<p style="text-align: center; color: var(--text-light); padding: 30px;">Nenhum item encontrado com os filtros selecionados.</p>';
+                updateProgress(filteredData);
+                return;
+            }
+
+            checklistItemsContainer.innerHTML = filteredData.map(item => {
+                const pilarTag = `<span class="meta-tag ${pilarMap[item.pilar].class}">${pilarMap[item.pilar].name}</span>`;
+                const marketplaceTags = item.marketplaces.map(mp => `<span class="meta-tag tag-marketplace">${marketplaceMap[mp]}</span>`).join('');
+
+                return `
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checklist-checkbox" data-id="${item.id}" ${checkedItems[item.id] ? 'checked' : ''}>
+                        <div class="checklist-content">
+                            <div class="checklist-title">${item.title}</div>
+                            <div class="checklist-meta">
+                                ${pilarTag}
+                                ${marketplaceTags}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Add event listeners
+            document.querySelectorAll('.checklist-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    if (e.target.checked) {
+                        checkedItems[id] = true;
+                    } else {
+                        delete checkedItems[id];
+                    }
+                    saveCheckedItems(checkedItems);
+                    renderChecklist(); // Re-render to update progress
+                });
+            });
+
+            updateProgress(ALL_CHECKLIST_DATA);
+        }
+
+        function updateProgress(data) {
+            const total = data.length;
+            const completed = data.filter(item => checkedItems[item.id]).length;
+            const percentage = Math.round((completed / total) * 100);
+
+            globalProgress.textContent = percentage + '%';
+            globalProgressBar.style.width = percentage + '%';
+        }
+
+        pilarFilter.addEventListener('change', renderChecklist);
+        marketplaceFilter.addEventListener('change', renderChecklist);
+
+        renderChecklist();
+    </script>
+</body>
+</html>
